@@ -1,58 +1,43 @@
-# Application QUELPOKE
+# QuelPoke
 
-Cette application vous permet de découvrir quel Pokémon vous êtes en fonction de votre prénom. Chaque prénom est associé à un Pokémon spécifique. Si vous entrez un nouveau prénom, l'application vous attribuera un nouveau Pokémon et enregistrera ce prénom.
+## Description du service
 
-## Fonctionnalités
+**QuelPoke** est une application web codée en Go (Golang) qui permet de générer un identifiant de Pokémon à partir d'un nom fourni via une requête GET. Le service retourne ensuite une page HTML affichant l'identifiant correspondant au Pokémon.
 
-- Entrer un prénom pour découvrir quel Pokémon vous êtes.
-- Générer un Pokémon différent lorsque le prénom change.
-- Stocker les prénoms et leurs Pokémon associés.
+## Fonctionnement global
 
-## Comment ça fonctionne ?
+L'application fonctionne sur le protocole HTTP et écoute sur le port **8080**. Lorsqu'une requête GET est envoyée avec le nom d'un Pokémon, l'application utilise l'API **Pokeapi.co** pour récupérer les informations correspondantes. Le résultat est ensuite rendu dans une page HTML via un template (fichier `index.tmpl.html`).
 
-1. **Lancer l'application** : Lorsque vous lancez l'application, elle vous demandera de saisir votre prénom.
-2. **Entrer un prénom** : Saisissez votre prénom, et l'application vous associera un Pokémon aléatoire.
-3. **Stockage des données** : L'application stockera le prénom et le Pokémon associé dans une base de données locale.
-4. **Changement de prénom** : Si vous entrez un nouveau prénom, l'application générera un nouveau Pokémon et mettra à jour la base de données avec ce nouveau prénom et Pokémon.
+L'application dépend principalement des bibliothèques standard de Go pour gérer les requêtes HTTP (`net/http`), le rendu des templates HTML (`html/template`), et la gestion des environnements. Elle peut également dépendre d'autres packages externes, spécifiés dans les fichiers `go.mod` et `go.sum`.
 
-## Technologies utilisées
+## Lancer le service sur votre poste
 
-- Langage de programmation : Python (ou un autre langage approprié).
-- Interface utilisateur : Interface en ligne de commande ou graphique (selon vos préférences).
-- Stockage des données : Fichier texte, CSV, ou base de données SQLite.
+### Prérequis
 
-## Installation
+1. **Télécharger les fichiers de l'application :**
+   - Téléchargez le fichier zip contenant tous les fichiers nécessaires à l'application depuis [ce lien](https://storage.googleapis.com/quelpoke/quelpoke.zip).
+   - Extrayez les fichiers sur votre poste.
 
-1. Clonez ce dépôt sur votre machine locale :
-    ```bash
-    git clone https://github.com/ZELKYYY/quelpoke.git
-    ```
-2. Installer GO my complier et Accédez au répertoire du projet :
-    ```go 
-    cd CHEMIN de quelpoke
-    ```
-3. CMD :
-    ```go
-    go mod tidy
-    ```
-    > go run main.go
+2. **Installer un éditeur de code :**
+   - Vous pouvez utiliser [Visual Studio Code](https://code.visualstudio.com/Download) pour lire et éditer le code source.
 
+3. **Installer Go :**
+   - Téléchargez et installez le compilateur Go depuis [le site officiel](https://go.dev/dl/).
 
-## Utilisation
+### Étapes de lancement
 
-1. Lancez l'application :
-  LANCER L'INDEX HTML
-## Contribuer
+1. **Ouvrir un terminal PowerShell :**
+   - Lancez PowerShell et naviguez vers le répertoire où vous avez extrait les fichiers de l'application.
 
-Les contributions sont les bienvenues ! Si vous souhaitez améliorer cette application, veuillez suivre les étapes ci-dessous :
+   ```powershell
+   cd "C:\Users\VOTRE_UTILISATEUR\Downloads\quelpoke"
+2. **Installer les dépendances :**
+   ```go mod tidy```
+3. **Lancer l'application :**
+   ```go run main.go```
+4. **Accéder à l'application sur un navigateur :**
+    http://localhost:8080
 
-1. Forkez ce dépôt.
-2. Créez une branche pour votre fonctionnalité/amélioration (`git checkout -b feature-amélioration`).
-3. Effectuez vos modifications et committez (`git commit -am 'Ajout d'une nouvelle fonctionnalité'`).
-4. Poussez vers la branche (`git push origin feature-amélioration`).
-5. Créez une Pull Request.
+© 2024 QuelPoke
 
-## Auteurs
-
-- **RENOUF Joris** - *Développeur principal* - [ZELKYYY](https://github.com/ZELKYYY)
-
+Ce fichier `README.md` inclut toutes les informations et commandes nécessaires pour utiliser l'application, de manière claire et concise.
