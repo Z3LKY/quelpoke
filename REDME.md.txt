@@ -37,16 +37,11 @@ Cette application vous permet de découvrir quel Pokémon vous êtes en fonction
     ```
     > go run main.go
 
-Lancer le INDEX
 
 ## Utilisation
 
 1. Lancez l'application :
-    ```bash
-    python app.py
-    ```
-2. Suivez les instructions à l'écran pour entrer votre prénom et découvrir votre Pokémon.
-
+  LANCER L'INDEX HTML
 ## Contribuer
 
 Les contributions sont les bienvenues ! Si vous souhaitez améliorer cette application, veuillez suivre les étapes ci-dessous :
